@@ -1,13 +1,14 @@
 import os
 import mmap
-import torch
+import time
 import toml
-from tqdm import tqdm
-from model import GPTLangModel
+import torch
 import pickle
-import argparse
-from random import randint
 import neetbox
+import argparse
+from tqdm import tqdm
+from random import randint
+from model import GPTLangModel
 from neetbox.logging import logger
 from neetbox.utils import ResourceLoader
 
@@ -114,10 +115,27 @@ if train_config["resume"]:
     except:
         logger.err("Error occured while loading from existing   weight. ignoring...")
     # move model to target device
-    model = model.to(device)
 
+model = model.to(device)
 logger.ok(f"{model.__class__} now on {device}, ready to train.")
 
+@neetbox.action(name="chat")
+def inference(prompt: str):
+    """chat with model
+
+    Args:
+        prompt (str): your input
+
+    Returns:
+        str: model's response
+    """
+    model.eval()
+    context = torch.tensor(encode(prompt), dtype=torch.long, device=device)
+    generated_chars = decode(
+        model.generate(context.unsqueeze(0), max_new_tokens=150)[0].tolist()
+    )
+    model.train()
+    return generated_chars
 
 # define how to test
 @torch.no_grad()
@@ -181,3 +199,7 @@ generated_chars = decode(
 logger.info(f"response: {generated_chars}")
 
 logger.ok("train complete.")
+
+logger.ok("model ready, please open http://localhost:20202/ in your browser to chat")
+while True:
+    time.sleep(1)
