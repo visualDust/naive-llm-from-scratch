@@ -1,0 +1,8 @@
+*.xz
+*.pkl
+neetbox.toml
+logs
+data/*.txt
+data/vocab.voc
+.neethistory
+__pycache__

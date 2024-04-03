@@ -1,0 +1,20 @@
+data_folder = "./data"
+vocabulary = "./data/vocab.voc"
+
+[train]
+resume = true
+batch_size = 32
+learning_rate = 0.001
+max_iter = 3000
+
+[test]
+eval_frequency = 100
+test_iter = 10
+test_prompt = "Hello! Can you see me?"
+
+[model]
+file = './model.saved.pkl'
+block_size = 128
+n_decoder = 8
+n_head = 8
+n_embed = 384
