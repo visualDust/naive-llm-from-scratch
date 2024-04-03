@@ -2,7 +2,7 @@
 
 
 
-tutorial: [LLM basics from scratch](https://gavin.gong.host/blog/2023/11/19/llm-from-scratch) provide step by step explanation.
+tutorial: [LLM basics from scratch](https://www.gong.host/blog/2024/2/2/llm-from-scratch) provide step by step explanation.
 
 
 
