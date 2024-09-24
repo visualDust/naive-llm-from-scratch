@@ -1,9 +1,9 @@
 # Put open web text corpus here
 
-Official site: [https://skylion007.github.io/OpenWebTextCorpus](https://skylion007.github.io/OpenWebTextCorpus)
-Google drive: [https://drive.google.com/drive/folders/1IaD_SIIB-K3Sij_-JjWoPy_UrWqQRdjx](https://drive.google.com/drive/folders/1IaD_SIIB-K3Sij_-JjWoPy_UrWqQRdjx)
+Official site: https://skylion007.github.io/OpenWebTextCorpus
+Download from Hugging face: https://huggingface.co/datasets/Skylion007/openwebtext
 
-download the file named `openwebtext.tar.xz` from above link and extract all the xz files here. The files should look like:
+download and put all the xz files here. The files should look like:
 
 ```
 urlsf_subset00-1_data.xz
