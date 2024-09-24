@@ -12,15 +12,19 @@ tutorial: [LLM basics from scratch](https://www.gong.host/blog/2024/2/2/llm-from
 
 ### prepare data
 
-Download from Huggingface: https://huggingface.co/datasets/Skylion007/openwebtext
+Official site: https://skylion007.github.io/OpenWebTextCorpus
+Download from Hugging face: https://huggingface.co/datasets/Skylion007/openwebtext
 
-download the and put all the `.xz` files in folder `openWebTextCorpus`. 
+download and put all the `.tar` files then run `bash unzip.sh` to unzip them, put all the unziped `.xz` files here.
 
 The files should look like:
-
 ![image-20231226204247058](./imgs/readme/image-20231226204247058.png)
 
-after you have downloaded and extracted files above, in terminal:
+If the unziped files are in a sub folder, please move them out.
+download the and put all the `.xz` files in folder `openWebTextCorpus`. 
+
+
+after you have done that, in terminal:
 
 ```bash
 python convert_data.py
