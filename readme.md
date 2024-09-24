@@ -12,9 +12,9 @@ tutorial: [LLM basics from scratch](https://www.gong.host/blog/2024/2/2/llm-from
 
 ### prepare data
 
-Download from Google drive: [https://drive.google.com/drive/folders/1IaD_SIIB-K3Sij_-JjWoPy_UrWqQRdjx](https://drive.google.com/drive/folders/1IaD_SIIB-K3Sij_-JjWoPy_UrWqQRdjx)
+Download from Huggingface: https://huggingface.co/datasets/Skylion007/openwebtext
 
-download the file named `openwebtext.tar.xz` from google drive link and **extract** all the `.xz` files in folder `openWebTextCorpus`. 
+download the and put all the `.xz` files in folder `openWebTextCorpus`. 
 
 The files should look like:
 
