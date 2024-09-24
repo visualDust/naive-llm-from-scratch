@@ -15,3 +15,5 @@ urlsf_subset00-4_data.xz
 urlsf_subset00-5_data.xz
 ...
 ```
+
+If the unziped files are in a sub folder, please move them out.
