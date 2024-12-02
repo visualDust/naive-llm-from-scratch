@@ -1,8 +1,8 @@
 *.xz
+*.tar
 *.pkl
 neetbox.toml
 logs
-data/*.txt
-data/vocab.voc
-.neethistory
+data/openwebtext/*
+data/extracted/*
 __pycache__

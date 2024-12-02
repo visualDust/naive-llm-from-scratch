@@ -1,3 +1,4 @@
+import os
 import math
 import lzma
 import neetbox
@@ -18,6 +19,7 @@ def xzs2txt(xz_file_list, txt_file_name):
                 outfile.write(text)
                 characters = set(text)
                 vocabulary_set.update(characters)
+    return f"converted {len(xz_file_list)} files into {txt_file_name}"
 
 
 def multi_thread_convert(xz_files, out_file_pattern):
@@ -55,14 +57,20 @@ def multi_thread_convert(xz_files, out_file_pattern):
         try:
             logger.info(f"returned from converter. {future.result()}")
         except Exception as e:
-            logger.err(RuntimeError(f"converter encountered {e}, check file status."))
+            logger.err(
+                RuntimeError(f"converter encountered {e}, check file status."),
+                reraise=True,
+            )
 
 
 if __name__ == "__main__":
-    xz_file_folder = "./openWebTextCorpus"
-    output_file_train = "./data/output{}.txt"
-    output_file_test = "./data/test{}.txt"
-    vocabulary_file = "./data/vocab.voc"
+    xz_file_folder = "./data/openwebtext/subsets"
+    output_file_train = "./data/extracted/train{}.txt"
+    output_file_test = "./data/extracted/test{}.txt"
+    vocabulary_file = "./data/extracted/vocab.voc"
+
+    # create extracted folder if not exist
+    os.makedirs(os.path.dirname(output_file_train), exist_ok=True)
 
     xz_files = ResourceLoader(
         folder=xz_file_folder, file_types=["xz"], sub_dirs=False
@@ -89,3 +97,12 @@ if __name__ == "__main__":
     logger.log("All tasks completed.")
 
     # open localhost:20202 in browser to see the progress
+
+    # ask user whether to delete data/openwebtext folder
+    # father folder of xz_file_folder
+    raw_folder = os.path.dirname(xz_file_folder)
+    if input(f"Do you want to delete folder {raw_folder}? (y/n): ").lower() == "y":
+        os.system(f"rm -rf {raw_folder}")
+        logger.log(f"folder {raw_folder} deleted.")
+    else:
+        logger.log("folder {raw_folder} not deleted.")

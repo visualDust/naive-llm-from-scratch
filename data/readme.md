@@ -1,17 +1,25 @@
-# Parsed .txt files
+# OpenWebTextCorpus
 
-After running `convert_data.py`, all the files in this folder should be:
+- Official site: https://skylion007.github.io/OpenWebTextCorpus
 
+- Hugging face: https://huggingface.co/datasets/Skylion007/openwebtext
+
+## Download Dataset
+
+Initialize Git LFS for Large Files
+
+```bash
+git lfs install
 ```
-output0.txt
-output1.txt
-output2.txt
-...
 
-test0.txt
-test1.txt
-test2.txt
-...
+Clone the dataset:
 
-vocab.voc
+```bash
+git clone https://huggingface.co/datasets/Skylion007/openwebtext
+```
+
+Unzip dataset:
+
+```python
+bash unzip.sh
 ```

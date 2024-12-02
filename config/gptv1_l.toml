@@ -1,5 +1,5 @@
-data_folder = "./data"
-vocabulary = "./data/vocab.voc"
+data_folder = "./data/extracted"
+vocabulary = "./data/extracted/vocab.voc"
 
 [train]
 resume = true
@@ -15,6 +15,6 @@ test_prompt = "Hello! Can you see me?"
 [model]
 file = './model.saved.pkl'
 block_size = 128
-n_decoder = 16
-n_head = 32
+n_decoder = 32
+n_head = 16
 n_embed = 1024

@@ -1,5 +1,5 @@
-data_folder = "./data"
-vocabulary = "./data/vocab.voc"
+data_folder = "./data/extracted"
+vocabulary = "./data/extracted/vocab.voc"
 
 [train]
 resume = true
